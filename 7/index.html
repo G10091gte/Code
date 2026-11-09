@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Практична робота. Цикли</title>
+  </head>
+  <body>
+    <script>
+      let x = Number(prompt("Задача 1 Введіть число x:"));
+      let n = Number(prompt("Введіть степінь n:"));
+
+      let power = 1;
+
+      for (let i = 1; i <= n; i++) {
+        power *= x;
+      }
+
+      alert(x + "^" + n + " = " + power);
+
+      let factN = Number(prompt("Задача 2 Введіть число n:"));
+
+      let factorial = 1;
+
+      for (let i = 1; i <= factN; i++) {
+        factorial *= i;
+      }
+
+      alert(factN + "! = " + factorial);
+
+      let fibN = Number(
+        prompt("Задача 3 Введіть кількість чисел Фібоначчі для виведення:"),
+      );
+
+      let a = 1;
+      let b = 1;
+      let fib = "1 1 ";
+
+      for (let i = 3; i <= fibN; i++) {
+        let c = a + b;
+        fib += c + " ";
+        a = b;
+        b = c;
+      }
+
+      alert("Числа Фібоначчі:" + fib);
+
+      let secret = Math.floor(Math.random() * 101);
+      let guess;
+
+      while (true) {
+        guess = prompt("Задача 4 Вгадайте число від 0 до 100");
+
+        if (guess === null) {
+          alert("Гру скасовано.");
+          break;
+        }
+
+        guess = Number(guess);
+
+        if (guess > secret) {
+          alert("Загадане число менше!");
+        } else if (guess < secret) {
+          alert("Загадане число більше!");
+        } else {
+          alert("Вітаю! Ви вгадали число!");
+          break;
+        }
+      }
+    </script>
+  </body>
+</html>

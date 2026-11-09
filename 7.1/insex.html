@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Слава Україні!</title>
+  </head>
+  <body>
+    <h2>Результат:</h2>
+    <div id="output"></div>
+
+    <script>
+      let input = prompt("Скільки привітань ви бажаєте отримати?");
+      let count = Number(input);
+      let output = document.getElementById("output");
+
+      function getWordForm(n) {
+        if (n % 100 >= 11 && n % 100 <= 14) {
+          return "разів";
+        }
+
+        switch (n % 10) {
+          case 1:
+            return "раз";
+          case 2:
+          case 3:
+          case 4:
+            return "рази";
+          default:
+            return "разів";
+        }
+      }
+
+      if (Number.isInteger(count) && count > 0) {
+        for (let i = 1; i <= count; i++) {
+          output.innerHTML += `${i}. Слава Україні!<br>`;
+        }
+
+        output.innerHTML += `<br>Героям слава! Привітання було виведено ${count} ${getWordForm(count)}.`;
+      } else {
+        output.innerHTML = "Помилка: потрібно ввести додатне ціле число.";
+      }
+    </script>
+  </body>
+</html>
